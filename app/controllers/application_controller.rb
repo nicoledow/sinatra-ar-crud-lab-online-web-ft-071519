@@ -36,6 +36,9 @@ class ApplicationController < Sinatra::Base
     erb :show_article
   end
   
+  delete '/articles/:id' do
+    binding.pry
+  end
   
   get '/articles' do
     @articles = Article.all
@@ -49,8 +52,6 @@ class ApplicationController < Sinatra::Base
     redirect "/articles/#{@new_article.id}"
   end
   
-  delete '/articles/:id' do
-    binding.pry
-  end
+
   
 end
