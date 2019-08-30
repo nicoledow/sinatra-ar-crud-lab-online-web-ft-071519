@@ -3,5 +3,6 @@
 <ul>
 <% @articles.each do |article| %>
   <li><%= article.title %></li>
+  <form method="post" action"/articles/<%=article.id%>/delete"></form>
 <% end %>
 </ul>
