@@ -5,7 +5,7 @@
   <li><%= article.title %></li>
   <!--form for the delete button: -->
   <form method="post" action="/articles/<%=article.id%>">
-    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="hidden" name="_method" value="delete">
     <input type="submit" value="delete">
   </form>
 <% end %>
