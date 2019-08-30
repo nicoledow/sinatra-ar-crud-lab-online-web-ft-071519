@@ -18,29 +18,29 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
   
-  #   # edit
-  # get "/articles/:id/edit" do
-  #   @article = Article.find(params[:id])
-  #   erb :edit
-  # end
-
-  # # update
-  # patch "/articles/:id" do
-  #   @article = Article.find(params[:id])
-  #   @article.update(params[:article])
-  #   redirect to "/articles/#{ @article.id }"
-  # end
-  
-  get '/articles/:id/edit' do
+    # edit
+  get "/articles/:id/edit" do
     @article = Article.find(params[:id])
     erb :edit
   end
-  
-   patch '/articles/:id' do
+
+  # update
+  patch "/articles/:id" do
     @article = Article.find(params[:id])
-    @article.update(:title => params["edit_article_title"], :content => params["edit_article_content"])
-    redirect to "/articles/#{@article.id}"
+    @article.update(params[:article])
+    redirect to "/articles/#{ @article.id }"
   end
+  
+  # get '/articles/:id/edit' do
+  #   @article = Article.find(params[:id])
+  #   erb :edit
+  # end
+  
+  # patch '/articles/:id' do
+  #   @article = Article.find(params[:id])
+  #   @article.update(:title => params["edit_article_title"], :content => params["edit_article_content"])
+  #   redirect to "/articles/#{@article.id}"
+  # end
   
   get '/articles/:id' do
     @article = Article.find(params[:id])
