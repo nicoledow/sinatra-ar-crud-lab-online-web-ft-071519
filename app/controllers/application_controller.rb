@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
   end
   
   delete '/articles/:id' do
-    "Delete page"
+    binding.pry
   end
   
   get '/articles' do
